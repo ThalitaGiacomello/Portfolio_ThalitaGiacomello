@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio</title>
     <link rel="stylesheet" href="https://use.typekit.net/nxt0igs.css">
+    <link rel="stylesheet" href="flexboxgrid.min.css" type="text/css">
     <style>
         body {
             overflow-x: hidden;
@@ -24,6 +25,11 @@
             display: grid;
         }
 
+        #banner>img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
         h2 {
             margin-bottom: 0;
             background-color: white;
@@ -35,11 +41,14 @@
             z-index: 1;
         }
 
+        .contatos>h2 {
+            margin-top: 0;
+        }
+
         .destaque {
             background-color: white;
-            width: fit-content;
-            padding: 35px;
-            border-radius: 60px;
+            padding: 45px;
+            border-radius: 40px;
             border: solid 4px black;
             position: relative;
             z-index: 0;
@@ -47,15 +56,15 @@
         }
 
         .sombra-roxa {
-            -webkit-box-shadow: 0px 15px 0px 7px rgba(74, 79, 135, 1);
-            -moz-box-shadow: 0px 15px 0px 7px rgba(74, 79, 135, 1);
-            box-shadow: 0px 15px 0px 7px rgba(74, 79, 135, 1);
+            -webkit-box-shadow: 12px 12px 0px 0px rgba(74, 79, 135, 1);
+            -moz-box-shadow: 12px 12px 0px 0px rgba(74, 79, 135, 1);
+            box-shadow: 12px 12px 0px 0px rgba(74, 79, 135, 1);
         }
 
         .sombra-verde {
-            -webkit-box-shadow: 0px 15px 0px 7px rgba(199, 218, 131, 1);
-            -moz-box-shadow: 0px 15px 0px 7px rgba(199, 218, 131, 1);
-            box-shadow: 0px 15px 0px 7px rgba(199, 218, 131, 1);
+            -webkit-box-shadow: 12px 12px 0px 0px rgba(199, 218, 131, 1);
+            -moz-box-shadow: 12px 12px 0px 0px rgba(199, 218, 131, 1);
+            box-shadow: 12px 12px 0px 0px rgba(199, 218, 131, 1);
         }
 
         .destaque>p {
@@ -69,13 +78,13 @@
         body {
             margin: 0;
             font-family: "mr-eaves-modern", "Century Gothic Bold", sans-serif;
-            font-size: 40px;
+            font-size: 2.5rem;
             font-style: normal;
             font-weight: 400;
         }
 
         a {
-            color: white;
+            color: black;
             text-decoration: none;
             padding: 25px;
         }
@@ -85,7 +94,12 @@
             position: fixed;
             width: 100%;
             z-index: 999;
+            color: white;
             font-weight: 700;
+        }
+
+        #header>ul>li>a {
+            color: white;
         }
 
         ul {
@@ -97,15 +111,9 @@
 
         li {
             padding: 25px;
-            font-size: 40px;
-        }
-
-        #banner {
-            background-image: url("imagens/capa.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            width: 100%;
-            height: 1000px;
+            font-size: 2.5rem;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
         }
 
         .content>section {
@@ -114,30 +122,21 @@
         }
 
         p {
-            font-size: 35px;
-            font-weight: 100;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 2.18rem;
         }
 
         li:hover {
             background-color: #421244;
         }
 
-        .placeholder {
-            height: 800px;
-        }
-
-        h1.thalita {
-            font-family: "Genty Demo";
-            font-size: 82px;
-            margin-top: 0;
-            color: #c7da83;
-            text-shadow: -5px 3px 0px rgba(26, 14, 27, 1);
+        .foto-thata {
+            max-width: 100%;
+            max-height: 100%;
         }
 
         .foto {
-            padding-top: 50px;
-            text-align: center;
+            max-width: 100%;
+            max-height: 100%;
         }
 
         .grid {
@@ -146,8 +145,11 @@
 
         .contatos {
             width: 100%;
-            padding: 0 20px;
             text-align: left;
+        }
+
+        .contatos>.destaque {
+            width: fit-content;
         }
 
         .contatos>p,
@@ -167,35 +169,31 @@
         #sobre-mim,
         .sobre-mim {
             background-color: #9b5285;
+            background-image: url(imagens/fundo-sobre-mim.jpg);
         }
 
         #curriculo,
         .curriculo {
             background-color: #d96488;
+            background-image: url(imagens/fundo-currículo.jpg);
         }
 
         #trabalhos,
         .trabalhos {
             background-color: #626caf;
+            background-image: url(imagens/fundo-trabalhos.jpg);
         }
 
-        .trabalhos {
-            background-image: url(imagens/fundo-trabalhos.png);
+        #trabalhos,
+        #curriculo,
+        #sobre-mim {
+            padding-top: 55px;
         }
 
         .trabalhos>.grid-row {
             justify-content: space-evenly;
-            margin-top: 85px;
+            margin-top: 45px;
             display: flex;
-        }
-
-        #sobre-mim {
-            height: 55px;
-        }
-
-        #trabalhos,
-        #curriculo {
-            height: 250px;
         }
 
         .formacao {
@@ -207,24 +205,11 @@
             width: 60%;
         }
 
-        .img-title {
-            margin-top: -60px;
-        }
-
         .capa:hover {
             width: 25%;
-            margin-top: -25px;
             transition: 0.5s;
         }
 
-        .idiomas,
-        .softwares,
-        .contatos {
-            background-image: url(imagens/verde.png);
-            background-repeat: no-repeat;
-            background-size: auto;
-            background-position-y: center;
-        }
 
         .idiomas,
         .softwares {
@@ -236,7 +221,57 @@
         }
 
         .software {
-            margin: 10px;
+            margin-top: 5px;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .contato {
+            align-items: center;
+            display: flex;
+            word-break: break-all;
+        }
+
+        .contato>a {
+            padding: 5px;
+        }
+
+        .square>img {
+            padding: 10px;
+        }
+
+        @media (max-width:920px) {
+
+            /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+            #banner>img {
+                margin-top: 100px;
+            }
+
+            #header {
+                text-align: center;
+            }
+
+            .capa {
+                margin-top: 20px;
+            }
+
+            .foto-thata {
+                max-width: 110%;
+                max-height: 110%;
+            }
+
+            .contatos {
+                margin-top: 55px;
+            }
+            p {
+                font-size: 1.8rem;
+            }
+            li {
+                font-size: 1.5rem;
+                padding: 15px;
+            }
         }
     </style>
 </header>
@@ -251,28 +286,21 @@
             </ul>
         </nav>
     </header>
-    <section id="banner">
+    <section id="banner" class="row">
+        <img src="imagens/capa.png" class="col-lg-12">
     </section>
-    <div class="content">
+    <div class="content col-lg-12">
 
-        <section id="sobre-mim"></section>
-        <section class="grid sobre-mim">
-            <div class="foto">
-                <img src="imagens/foto.png" width="900" height="auto">
-                <h1 class="thalita">Thalita Giacomello</h1>
-                <div class="contatos">
-                    <h2>Contatos</h2>
-                    <p><img src="imagens/icons/phone.png" width="52" />(11) 96210-2462</p>
-                    <p><img src="imagens/icons/linkedin.png" width="52" /><a
-                            href="https://www.linkedin.com/in/thalitagiacomello/?originalSubdomain=br"
-                            target="_blank">in/thalitagiacomello</a></p>
-                    <p><img src="imagens/icons/behance.png" width="52" /><a
-                            href="https://www.behance.net/thalitagiacome" target="_blank">behance.net/thalitagiacome</a>
-                    </p><br /><br /><br />
-                </div>
+        <section id="sobre-mim" class="row">
+            <img src="imagens/sobre-mim.png" class="col-lg-3 col-lg-offset-1 col-xs-offset-0 foto" width="300"
+                height="auto" />
+        </section>
+        <section class="grid sobre-mim row">
+            <div class="col-lg-offset-1 col-xs-offset-0 col-lg-3 col-xs-12 center">
+                <img src="imagens/foto.png" class="foto-thata">
             </div>
-            <div class="bio">
-                <h2>Sobre mim</h2>
+            <div class="col-lg-6 col-xs-12">
+                <img src="imagens/nome.png" class="foto" />
                 <div class="destaque sombra-verde">
                     <p>&nbsp;&nbsp;&nbsp;Uma profissional em busca de aprendizado,
                         desenvolvimento e aberta a novas experiências tanto
@@ -282,108 +310,135 @@
                         comunicação. Sou uma pessoa desenvolta, organizada,
                         comunicativa e sei trabalhar em grupo.</p>
                 </div>
-                <div class="grid">
-                    <div class="idiomas">
-                        <h2>Idiomas</h2>
-                        <p>Português > Nativo</p>
-                        <p>Inglês > Avançado</p><br /><br /><br /><br />
+            </div>
+            <div class="row col-lg-6 col-lg-offset-4">
+                <div class="col-lg-6 col-sm-12 col-xs-12">
+                    <h2>Idiomas</h2>
+                    <div class="destaque sombra-verde">
+                        <p><strong>Português > Nativo</strong></p>
+                        <p><strong>Inglês > Avançado</strong></p>
                     </div>
-                    <div class="softwares">
-                        <h2>Softwares</h2>
-                        <div class="grid">
-                            <img class="software" src="imagens/icons/ai.png" width="72" />
-                            <img class="software" src="imagens/icons/ps.png" width="72" />
-                            <img class="software" src="imagens/icons/id.png" width="72" />
+                </div>
+                <div class="col-lg-6 col-sm-12 col-xs-12">
+                    <h2>Softwares</h2>
+                    <div class="destaque sombra-verde">
+                        <div class="grid row">
+                            <img class="software col-lg-4 col-sm-4 col-xs-4" src="imagens/icons/ai.png" width="72" />
+                            <img class="software col-lg-4 col-sm-4 col-xs-4" src="imagens/icons/ps.png" width="72" />
+                            <img class="software col-lg-4 col-sm-4 col-xs-4" src="imagens/icons/id.png" width="72" />
                         </div>
-                        <div class="grid">
-                            <img class="software" src="imagens/icons/word.png" width="88" />
-                            <img class="software" src="imagens/icons/excel.png" width="88" />
-                            <img class="software" src="imagens/icons/ppt.png" width="88" />
-                        </div><br /><br /><br /><br /><br />
+                        <div class="grid row">
+                            <img class="software col-lg-4 col-sm-4 col-xs-4" src="imagens/icons/word.png" width="88" />
+                            <img class="software col-lg-4 col-sm-4 col-xs-4" src="imagens/icons/excel.png" width="88" />
+                            <img class="software col-lg-4 col-sm-4 col-xs-4" src="imagens/icons/ppt.png" width="88" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bio col-lg-7 col-lg-offset-4">
+                <div class="contatos col-lg-12">
+                    <h2>Contatos</h2>
+                    <div class="destaque sombra-verde">
+                        <p class="contato"><img src="imagens/icons/linkedin.png" width="52" /><a
+                                href="https://www.linkedin.com/in/thalitagiacomello/?originalSubdomain=br"
+                                target="_blank">in/thalitagiacomello</a></p>
+                        <p class="contato"><img src="imagens/icons/behance.png" width="52" /><a
+                                href="https://www.behance.net/thalitagiacome"
+                                target="_blank">behance.net/thalitagiacome</a>
+                        </p>
+                        <p class="contato"><img src="imagens/icons/email.png" width="52" /><a
+                                href="mailto:thalita.giacomello@hotmail.com"
+                                target="_blank">thalita.giacomello@hotmail.com</a></p>
+
                     </div>
                 </div>
             </div>
         </section>
-        <section id="curriculo">
-            <img src="imagens/curriculo.png" class="img-title" width="600" height="auto" />
+        <section id="curriculo" class="row">
+            <img src="imagens/curriculo.png" class="col-lg-3 col-lg-offset-1 col-xs-offset-0 foto" width="300"
+                height="auto" />
         </section>
-        <section class="curriculo">
-            <div class="grid">
-                <div class="formacao">
-                    <h2>Formação</h2>
-                    <div class="destaque sombra-roxa">
-                        <p><strong>2022 - Cursando</strong></br>
-                            <span>Design (bacharelado) -</span> FIAMFAAM
-                        </p></br>
-                        <p><strong>2018 - 2020</strong></br>
-                            <span>Comunicação Visual -</span> Etec Tiquatira
-                        </p></br>
-                        <p><strong>2017 - 2019</strong></br>
-                            <span>Ensino Médio -</span> Colégio Pop
-                        </p></br>
-                        <p><strong>Ago 2019 - Dez 2019</strong></br>
-                            <span>Áudio e vídeo -</span> Fábrica de Cultura
-                        </p></br>
-                        <p><strong>Maio 2017 - Jul 2017 (144 horas)</strong></br>
-                            <span>Cinema -</span> É Nóis na Fita
-                        </p></br>
-                    </div>
-                </div>
-                <div class="experiencia">
-                    <h2>Experiência profissional</h2>
-                    <div class="destaque sombra-roxa">
-                        <p><strong>Estagiária de Design</strong></br>
-                            Instituto Nacional do Seguro Social (INSS) | Jun 2024</br></br>
-                            • Elaboração de peças gráficas</br>
-                            • Sinalização de agências</br>
-                            • Fotografia de eventos</br>
-                            • Edição de fotos</p></br>
-                        <p><strong>Jovem Aprendiz Administrativo</strong></br>
-                            Concentrix | Jan 2022 - Dez 2022</br></br>
-                            •Acompanhamento e gestão de treinamentos</br>
-                            •Monitoramento de casos em aberto</br>
-                            •Organização e teste de equipamentos e periféricos</br>
-                            •Auxílio em eventos e entretenimento
-                        </p></br>
-                    </div>
+        <section class="curriculo row">
+
+            <div class="formacao col-lg-5 col-lg-offset-1 col-sm-12 col-xs-12">
+                <h2>Formação</h2>
+                <div class="destaque sombra-roxa">
+                    <p><strong>2022 - Cursando</strong></br>
+                        <span>Design (bacharelado) -</span> FIAMFAAM
+                    </p></br>
+                    <p><strong>2018 - 2020</strong></br>
+                        <span>Comunicação Visual -</span> Etec Tiquatira
+                    </p></br>
+                    <p><strong>2017 - 2019</strong></br>
+                        <span>Ensino Médio -</span> Colégio Pop
+                    </p></br>
+                    <p><strong>Ago 2019 - Dez 2019</strong></br>
+                        <span>Áudio e vídeo -</span> Fábrica de Cultura
+                    </p></br>
+                    <p><strong>Maio 2017 - Jul 2017 (144 horas)</strong></br>
+                        <span>Cinema -</span> É Nóis na Fita
+                    </p></br>
                 </div>
             </div>
+            <div class="experiencia col-lg-5 col-sm-12 col-xs-12">
+                <h2>Experiência profissional</h2>
+                <div class="destaque sombra-roxa">
+                    <p><strong>Estagiária de Design</strong></br>
+                        Instituto Nacional do Seguro Social (INSS) | Jun 2024</br></br>
+                        • Elaboração de peças gráficas</br>
+                        • Sinalização de agências</br>
+                        • Fotografia de eventos</br>
+                        • Edição de fotos</p></br>
+                    <p><strong>Jovem Aprendiz Administrativo</strong></br>
+                        Concentrix | Jan 2022 - Dez 2022</br></br>
+                        •Acompanhamento e gestão de treinamentos</br>
+                        •Monitoramento de casos em aberto</br>
+                        •Organização e teste de equipamentos e periféricos</br>
+                        •Auxílio em eventos e entretenimento
+                    </p></br>
+                </div>
+
+            </div>
         </section>
-        <section id="trabalhos">
-            <img src="imagens/trabalhos.png" class="img-title" width="600" height="auto" />
+        <section id="trabalhos" class="row">
+            <img src="imagens/trabalhos.png" class="col-lg-3 col-lg-offset-1 col-xs-offset-0 foto" width="300"
+                height="auto" />
         </section>
-        <section class="trabalhos">
+        <section class="trabalhos row">
             <!-- <h2>Trabalhos</h2> -->
             <!-- <p>Conteúdo sobre os trabalhos aqui.</p> -->
-            <div class="grid-row">
-                <img class="capa" src="imagens/portfolio/Poster Billy e Mandy.jpg" width="23%" height="auto" />
-                <img class="capa" src="imagens/portfolio/Poster Cruella.jpg" width="23%" height="auto" />
-                <img class="capa" src="imagens/portfolio/Poster com créditos.png" width="23%" height="auto" />
-                <img class="capa" src="imagens/portfolio/Poster frase branco (Thata).png" width="23%" height="auto" />
+            <div class="grid-row col-lg-offset-1 col-lg-10 row">
+                <img class="capa col-lg-3 col-sm-12 col-xs-12" src="imagens/portfolio/Poster Billy e Mandy.jpg" />
+                <img class="capa col-lg-3 col-sm-12 col-xs-12" src="imagens/portfolio/Poster Cruella.jpg" />
+                <img class="capa col-lg-3 col-sm-12 col-xs-12" src="imagens/portfolio/Poster com créditos.png" />
+                <img class="capa col-lg-3 col-sm-12 col-xs-12"
+                    src="imagens/portfolio/Poster frase branco (Thata).png" />
             </div>
-            <div class="grid-row">
-                <img class="capa" src="imagens/portfolio/Convite Helopalooza frente.jpg" width="23%" height="auto" />
-                <img class="capa" src="imagens/portfolio/Convite Helopalooza verso.jpg" width="23%" height="auto" />
-                <img class="capa" src="imagens/portfolio/Capa de revista.jpg.jpg" width="23%" height="auto" />
-                <img class="capa" src="imagens/portfolio/Marca página Sailor Mercury 2024.jpg" width="23%"
-                    height="auto" />
+            <div class="grid-row col-lg-offset-1 col-lg-10 row">
+                <img class="capa col-lg-3 col-sm-12 col-xs-12" src="imagens/portfolio/Convite Helopalooza frente.jpg" />
+                <img class="capa col-lg-3 col-sm-12 col-xs-12" src="imagens/portfolio/Convite Helopalooza verso.jpg" />
+                <img class="capa col-lg-3 col-sm-12 col-xs-12" src="imagens/portfolio/Capa de revista.jpg.jpg" />
+                <img class="capa col-lg-3 col-sm-12 col-xs-12"
+                    src="imagens/portfolio/Marca página Sailor Mercury 2024.jpg" />
             </div>
-            <div class="grid-row">
-                <img class="capa" src="imagens/portfolio/img20241109_20363042.png" width="23%" height="auto" />
-                <img class="capa" src="imagens/portfolio/Ilustração capa do livro.jpg" width="23%" height="auto" />
-                <img class="capa" src="imagens/portfolio/1 limão.jpg" width="23%" height="auto" />
-                <img class="capa" src="imagens/portfolio/11.jpg" width="23%" height="auto" />
+            <div class="grid-row col-lg-offset-1 col-lg-10 row">
+                <img class="capa col-lg-3 col-sm-12 col-xs-12" src="imagens/portfolio/img20241109_20363042.png" />
+                <img class="capa col-lg-3 col-sm-12 col-xs-12" src="imagens/portfolio/Ilustração capa do livro.jpg" />
+                <img class="capa col-lg-3 col-sm-12 col-xs-12" src="imagens/portfolio/1 limão.jpg" />
+                <img class="capa col-lg-3 col-sm-12 col-xs-12" src="imagens/portfolio/11.jpg" " />
             </div>
-            <div class="grid-row">
-                <img class="capa" src="imagens/portfolio/Permitidos.png" width="23%" height="auto" />
-                <img class="capa" src="imagens/portfolio/1.jpg" width="23%" height="auto" />
-                <img class="capa" src="imagens/portfolio/5.jpg" width="23%" height="auto" />
-                <img class="capa" src="imagens/portfolio/metrô_show (thata).jpg" width="23%" height="auto" />
-            </div>
-            <div class="grid-row">
-                <img class="capa" src="imagens/portfolio/calcinha 2 (silhueta).png" width="23%" height="auto" />
-                <img class="capa" src="imagens/portfolio/calcinha 1 (nordeste).png" width="23%" height="auto" />
-                <img class="capa" src="imagens/portfolio/calcinha 3 (dança).png" width="23%" height="auto" />
+            <div class=" grid-row col-lg-offset-1 col-lg-10 row">
+                <img class="capa col-lg-6 col-sm-12 col-xs-12" src="imagens/portfolio/Permitidos.png" />
+                <div class="grid-row col-lg-6">
+                    <div class="row square">
+                        <img class="col-lg-6 col-sm-12 col-xs-12" src="imagens/portfolio/1.jpg" />
+                        <img class="col-lg-6 col-sm-12 col-xs-12" src="imagens/portfolio/5.jpg" />
+                    </div>
+                    <div class="row square">
+                        <img class="col-lg-6 col-sm-12 col-xs-12" src="imagens/portfolio/calcinha 1 (nordeste).png" />
+                        <img class="col-lg-6 col-sm-12 col-xs-12" src="imagens/portfolio/calcinha 3 (dança).png" />
+                    </div>
+                </div>
             </div></br></br>
         </section>
     </div>
